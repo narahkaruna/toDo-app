@@ -1,3 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+#wrapper {
+    width: 98%;
+    background: slategray;
+    padding: 30px 20px;
+    margin: 0 auto;
+}
 #taskList {
     display: grid;
+    grid-template-columns: 5px 50px 1fr;
 }

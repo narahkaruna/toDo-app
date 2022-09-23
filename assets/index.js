@@ -1,7 +1,8 @@
-let todoList = [];
+const todoList = [];
+const taskCompleted = [];
+const taskTodo = [];
 
 let todos = {
-    displayTodo: todoList,
     addTodo: (todo) => {
         todoList.push(todo)
     },
@@ -30,7 +31,4 @@ function addTask(){
     inputTask.value = '';
 }
 
-function deleteTask(event){
-    if(event.target.input === checked)
-    todos.deleteTodo(event.target.input);
-}
+
