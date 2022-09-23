@@ -1,4 +1,4 @@
-let todoList = ['laughing', 'shopping', 'cleaning'];
+let todoList = [];
 
 let todos = {
     displayTodo: todoList,
@@ -15,33 +15,22 @@ let todos = {
     }
 };
 
+let count = 1;
 let taskList = document.querySelector('#taskList');
 let addBtn = document.querySelector('#addBtn');
 addBtn.addEventListener('click', addTask)
 
 function addTask(){
-    let inputTask = document.querySelector('#task').value;
-    todos.addTodo(inputTask);
+    let inputTask = document.querySelector('#task');
+    let id = `task${count++}`;
+    let chkbox = `<label for='${id}'></label>
+        <input type='checkbox' id='${id}' name='task'>${inputTask.value}</input>`;
+    todos.addTodo(inputTask.value);
+    taskList.insertAdjacentHTML("beforeend", chkbox);
+    inputTask.value = '';
 }
 
-function displayTask(){
-    for(let i = 0; i < todoList.length; i++){
-        let id = `task${i+1}`;
-        //Create label
-        let label = document.createElement('label');
-        label.htmlFor = id;
-
-        //Create checkbox
-        let checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = id;
-        checkbox.name = 'task';
-        checkbox.innerHTML = todoList[i];
-
-        taskList.appendChild(label);
-        taskList.appendChild(checkbox);
-    }
-    
+function deleteTask(event){
+    if(event.target.input === checked)
+    todos.deleteTodo(event.target.input);
 }
-displayTask();
-
