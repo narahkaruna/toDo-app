@@ -13,5 +13,21 @@ body {
 }
 #taskList {
     display: grid;
-    grid-template-columns: 5px 50px 1fr;
+    grid-template-columns: 2px 30px 1fr;
+}
+/*#taskList input[type="checkbox"] {
+    width: 200px;
+    font-family: Tahoma;
+}*/
+#tabs {
+    width: 98%;
+}
+
+#tabs div{
+    display: inline-block;
+    width: 85px;
+    height: 40px;
+    padding: 15px;
+    text-align: center;
+    background-color: blanchedalmond;
 }

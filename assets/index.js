@@ -25,10 +25,19 @@ function addTask(){
     let inputTask = document.querySelector('#task');
     let id = `task${count++}`;
     let chkbox = `<label for='${id}'></label>
-        <input type='checkbox' id='${id}' name='task'>${inputTask.value}</input>`;
+        <input type='checkbox' id='${id}' name='task' value='${inputTask.value}'>${inputTask.value}</input>`;
     todos.addTodo(inputTask.value);
     taskList.insertAdjacentHTML("beforeend", chkbox);
     inputTask.value = '';
 }
+
+function handleTask(){
+    let tasks = document.querySelectorAll('taskList input[type="checkbox"]');
+    tasks.forEach(task => {
+        task.checked ? taskCompleted.push(task.value) : taskTodo.push(task.value)
+    });
+}
+
+
 
 
